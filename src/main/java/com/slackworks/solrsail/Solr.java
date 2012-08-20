@@ -11,11 +11,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.metapossum.utils.scanner.PackageScanner;
-import com.slackworks.command.ConfigFactory;
+
 import com.slackworks.command.Runner;
 import com.slackworks.command.annotation.ByYourCommand;
 import com.slackworks.command.annotation.Command;
+
 import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 
 @ByYourCommand
 public class Solr {
@@ -23,7 +25,7 @@ public class Solr {
 	
 	private String solrHome;
 	
-	public Solr() throws IOException {
+	public Solr() {
 		Config config = ConfigFactory.load();
 		solrHome = config.getString("solrsail.solr.home");
 	}
