@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.slackworks</groupId>
+  <artifactId>solrsail</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Solr Sail</name>
+  <url>https://github.com/mguymon/solr_sail</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jetty.version>8.1.4.v20120524</jetty.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+    	<groupId>com.slackworks.command</groupId>
+		<artifactId>core</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+  
+	<!-- Jetty -->
+	<dependency>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>jetty-server</artifactId>
+		<version>${jetty.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>jetty-jndi</artifactId>
+		<version>${jetty.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>jetty-jmx</artifactId>
+		<version>${jetty.version}</version>
+	</dependency> 
+	<dependency>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>jetty-webapp</artifactId>
+		<version>${jetty.version}</version>
+	</dependency> 
+	<dependency>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>jetty-plus</artifactId>
+		<version>${jetty.version}</version>
+	</dependency> 
+	<dependency>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>jetty-jsp</artifactId>
+		<version>${jetty.version}</version>
+	</dependency>  
+	
+	<!--  JSP Compiler -->
+	<dependency>
+		<groupId>org.eclipse.jdt.core.compiler</groupId>
+		<artifactId>ecj</artifactId>
+		<version>3.7.2</version>
+	</dependency>
+            
+	<!-- Solr -->          
+    <dependency>
+		<groupId>org.apache.solr</groupId>
+		<artifactId>solr-core</artifactId>
+		<version>3.6.0</version>
+	</dependency>
+            
+    <!-- Logging -->
+    <dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-classic</artifactId>
+		<version>1.0.6</version>
+	</dependency>
+            
+    <!-- Testing -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
