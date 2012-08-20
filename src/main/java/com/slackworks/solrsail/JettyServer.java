@@ -9,11 +9,12 @@ import org.eclipse.jetty.webapp.WebAppContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.slackworks.command.ConfigFactory;
 import com.slackworks.command.Runner;
 import com.slackworks.command.annotation.ByYourCommand;
 import com.slackworks.command.annotation.Command;
+
 import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 
 /**
  * Jetty Server
@@ -23,13 +24,15 @@ import com.typesafe.config.Config;
 public class JettyServer {
 	private static Logger logger = LoggerFactory.getLogger( JettyServer.class );
 	
-	private String solrHome = "solr";
-	private String contextPath = "/solr"; 
-	private int port = 8080;
+	private String solrHome;
+	private String contextPath; 
+	private int port;
 	
-	public JettyServer() throws IOException {
+	public JettyServer() {
 		Config config = ConfigFactory.load();
 		solrHome = config.getString("solrsail.solr.home");
+		port = config.getInt("solrsail.solr.port");
+		contextPath = config.getString("solrsail.solr.contextpath");
 	}
 	
 	@Command
