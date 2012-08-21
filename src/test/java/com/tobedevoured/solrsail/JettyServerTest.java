@@ -1,4 +1,4 @@
-package com.slackworks.solrsail;
+package com.tobedevoured.solrsail;
 
 public class JettyServerTest {
 

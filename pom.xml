@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.slackworks</groupId>
+  <groupId>com.tobedevoured</groupId>
   <artifactId>solrsail</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
@@ -17,7 +17,7 @@
 
   <dependencies>
     <dependency>
-    	<groupId>com.slackworks.command</groupId>
+    	<groupId>com.tobedevoured.command</groupId>
 		<artifactId>core</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
     </dependency>

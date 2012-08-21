@@ -1,4 +1,4 @@
-package com.slackworks.solrsail;
+package com.tobedevoured.solrsail;
 
 import java.io.File;
 import java.util.jar.JarEntry;

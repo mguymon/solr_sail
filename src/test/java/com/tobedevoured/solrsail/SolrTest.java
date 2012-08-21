@@ -1,4 +1,4 @@
-package com.slackworks.solrsail;
+package com.tobedevoured.solrsail;
 
 import static org.junit.Assert.*;
 
@@ -8,6 +8,8 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 import org.modeshape.common.util.FileUtil;
+
+import com.tobedevoured.solrsail.Solr;
 
 public class SolrTest {
 
