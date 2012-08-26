@@ -4,7 +4,7 @@ scopes:
     dependencies: 
       - pom.xml
     resolved_dependencies: 
-      - com.slackworks.command:core:jar:0.0.1-SNAPSHOT
+      - com.tobedevoured.command:core:jar:0.0.1-SNAPSHOT
       - org.modeshape:modeshape-common:jar:2.8.2.Final
       - com.metapossum:metapossum-scanner:jar:1.0.1
       - commons-beanutils:commons-beanutils:jar:1.8.3
@@ -72,3 +72,6 @@ scopes:
     resolved_dependencies: 
       - junit:junit:jar:4.10
       - org.hamcrest:hamcrest-core:jar:1.1
+repositories: 
+  - http://repo1.maven.org/maven2/
+  - http://repository.jboss.org/nexus/content/groups/public-jboss
