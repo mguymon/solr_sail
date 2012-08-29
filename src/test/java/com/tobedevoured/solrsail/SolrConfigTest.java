@@ -4,21 +4,22 @@ import static org.junit.Assert.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.modeshape.common.util.FileUtil;
 
-import com.tobedevoured.solrsail.Solr;
+import com.tobedevoured.solrsail.SolrConfig;
 
-public class SolrTest {
+public class SolrConfigTest {
 
-	private Solr helper;
+	private SolrConfig helper;
 	private File solrHome;
 	
 	@Before
 	public void setup() throws IOException {
-		helper = new Solr();
+		helper = new SolrConfig();
 		
 		solrHome = new File( helper.getSolrHome() );
 		
@@ -32,16 +33,17 @@ public class SolrTest {
 		assertEquals( "target/test-solr", helper.getSolrHome() );
 	}
 	
+	
 	@Test
-	public void createSolrHomeDir() {
-		helper.createSolrHomeDir();
+	public void installFromClasspath() throws IOException {
+		helper.installFromClasspath();
 		
-		assertTrue( solrHome.exists() );
+		assertTrue( (new File( helper.getSolrHome() + File.separator + "solr.xml")).exists() );
 	}
 	
 	@Test
-	public void installConfig() throws IOException {
-		helper.installConfig();
+	public void install() throws IOException, URISyntaxException {
+		helper.install();
 		
 		assertTrue( (new File( helper.getSolrHome() + File.separator + "solr.xml")).exists() );
 	}
