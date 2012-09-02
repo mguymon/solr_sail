@@ -26,16 +26,30 @@ import com.tobedevoured.command.annotation.CommandParam;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
+/**
+ * Solr Config Helper
+ * 
+ * @author Michael Guymon
+ *
+ */
 @ByYourCommand
 public class SolrConfig {
 	private static Logger logger = LoggerFactory.getLogger( SolrConfig.class );
 	
 	private String solrHome;
 	
+	/**
+	 * Create new instance
+	 */
 	public SolrConfig() {
 		loadDefaultConfig();
 	}
 	
+	/**
+	 * Create new instance
+	 * 
+	 * @param solrHome String path
+	 */
 	public SolrConfig( String solrHome ) {
 		if ( solrHome != null ) {
 			this.solrHome = solrHome;
@@ -44,6 +58,9 @@ public class SolrConfig {
 		}
 	}
 	
+	/**
+	 * Load config from TypeSafe {@link ConfigFactory#load()}
+	 */
 	public void loadDefaultConfig() {
 		Config config = ConfigFactory.load();
 		solrHome = config.getString("solrsail.solr.home");
@@ -101,6 +118,12 @@ public class SolrConfig {
 		return scanner.scan( "solr" );
 	}
 	
+	/**
+	 * Install Solr Config to the local file system
+	 * 
+	 * @throws IOException
+	 * @throws URISyntaxException
+	 */
 	@Command
 	public void install() throws IOException, URISyntaxException {
 		File jar = new File( this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI() );
@@ -112,12 +135,27 @@ public class SolrConfig {
 		}
 	}
 	
+	/**
+	 * Install Solr Config t the local file system by extracting from the
+	 * SolrSail jar
+	 * 
+	 * @param jar String path
+	 * @throws IOException
+	 * @throws URISyntaxException
+	 */
 	@Command
 	@CommandParam(name = "jar", type = String.class)
 	public void installFromJar( String jar ) throws IOException, URISyntaxException {
 		installFromJar( new File( jar ) );
 	}
 		
+	/**
+	 * Install Solr Config t the local file system by extracting from the
+	 * SolrSail jar
+	 * 
+	 * @param jar File
+	 * @throws IOException
+	 */
 	public void installFromJar( File jar ) throws IOException {
 		logger.info( "Installing config from Jar to {}", this.getSolrHome() );
 		logger.debug( "Opening Jar {}", jar.toString() );

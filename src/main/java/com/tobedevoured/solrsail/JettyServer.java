@@ -19,6 +19,7 @@ import com.typesafe.config.ConfigFactory;
 /**
  * Jetty Server
  *
+ * @author Michael Guymon
  */
 @ByYourCommand
 public class JettyServer {
@@ -28,6 +29,9 @@ public class JettyServer {
 	private String contextPath; 
 	private int port;
 	
+	/**
+	 * Create new instance
+	 */
 	public JettyServer() {
 		Config config = ConfigFactory.load();
 		solrHome = config.getString("solrsail.solr.home");
@@ -35,6 +39,11 @@ public class JettyServer {
 		contextPath = config.getString("solrsail.solr.contextpath");
 	}
 	
+	/**
+	 * Start Jetty
+	 * 
+	 * @throws Exception
+	 */
 	@Command
     public void start() throws Exception {
 		

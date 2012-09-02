@@ -4,7 +4,7 @@ require 'java'
 
 module SolrSail
   @@version = IO.read("VERSION").strip
-  @@jar = File.expand_path("#{File.dirname(__FILE__)}/../solrsail-#{@@version}.jar")
+  @@jar = File.expand_path("#{File.dirname(__FILE__)}/../solr_sail-#{@@version}.jar")
   @@lockfile = File.expand_path("#{File.dirname(__FILE__)}/../Jarfile.lock")
   
   def self.version

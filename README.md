@@ -1,6 +1,6 @@
 # Solr Sail
 
-Solr Search fresh from the can
+From zero to search in the flash of a gem.
 
 ## Install
 

@@ -49,7 +49,7 @@ namespace :solr_sail do
       FileUtils.copy( 'VERSION', "target/gem/VERSION" )
       
       version = IO.read('VERSION').strip
-      FileUtils.copy( "target/solrsail-#{version}.jar", "target/gem/solrsail-#{version}.jar" )
+      FileUtils.copy( "target/solr_sail-#{version}.jar", "target/gem/solr_sail-#{version}.jar" )
       
       # Change dir so relevant files have the correct paths
       Dir.chdir( "target/gem" )      
@@ -86,8 +86,8 @@ Jeweler::Tasks.new do |gem|
   gem.platform = "java"
   gem.homepage = "http://github.com/mguymon/solr_sail"
   gem.license = "MIT"
-  gem.summary = %Q{Solr Server for JRuby}
-  gem.description = %Q{Solr Server for JRuby}
+  gem.summary = %Q{From zero to search in the flash of a gem.}
+  gem.description = %Q{From zero to search in the flash of a gem.}
   gem.email = "michael@tobedevoured.com"
   gem.authors = ["Michael Guymon"]
   gem.require_paths = %w[lib]
