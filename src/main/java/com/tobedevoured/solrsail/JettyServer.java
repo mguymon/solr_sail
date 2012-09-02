@@ -36,7 +36,7 @@ public class JettyServer {
 	}
 	
 	@Command
-    public void run() throws Exception {
+    public void start() throws Exception {
 		
     	System.setProperty("java.naming.factory.url.pkgs", "org.eclipse.jetty.jndi");
     	System.setProperty("java.naming.factory.initial", "org.eclipse.jetty.jndi.InitialContextFactory");

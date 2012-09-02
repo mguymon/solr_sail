@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'solr_sail/cli'
+
+SolrSail::CLI.start

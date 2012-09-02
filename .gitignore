@@ -1,9 +1,22 @@
-.*
-*.class
+# rcov generated
+coverage
+coverage.data
 
+# rdoc generated
+rdoc
+
+# yard generated
+doc
+.yardoc
+
+# bundler
+.bundle
+
+# jeweler generated
+pkg
+
+# Maven
 target
 
-# Package Files #
-*.jar
-*.war
-*.ear
+# All other doty files
+.*

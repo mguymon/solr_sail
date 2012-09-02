@@ -33,12 +33,20 @@ public class SolrConfig {
 	private String solrHome;
 	
 	public SolrConfig() {
-		Config config = ConfigFactory.load();
-		solrHome = config.getString("solrsail.solr.home");
+		loadDefaultConfig();
 	}
 	
 	public SolrConfig( String solrHome ) {
-		this.solrHome = solrHome;
+		if ( solrHome != null ) {
+			this.solrHome = solrHome;
+		} else {
+			loadDefaultConfig();
+		}
+	}
+	
+	public void loadDefaultConfig() {
+		Config config = ConfigFactory.load();
+		solrHome = config.getString("solrsail.solr.home");
 	}
 	
 	public String getSolrHome() {
