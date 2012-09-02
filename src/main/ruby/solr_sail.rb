@@ -2,26 +2,16 @@ require 'rubygems'
 require 'lock_jar'
 require 'java'
 
+require 'solr_sail/version'
+
 module SolrSail
-  @@version = IO.read("VERSION").strip
-  @@jar = File.expand_path("#{File.dirname(__FILE__)}/../solr_sail-#{@@version}.jar")
-  @@lockfile = File.expand_path("#{File.dirname(__FILE__)}/../Jarfile.lock")
   
-  def self.version
-    @@version 
-  end
-  
-  # Find lockjar relative to the gem install
-  def self.default_lockfile
-    @@lockfile
-  end
-  
-  def self.default_jar
-    @@jar
-  end
+  DEFAULT_JAR_NAME = "solr_sail-#{SolrSail::VERSION}.jar"
+  DEFAULT_JAR = File.expand_path("#{File.dirname(__FILE__)}/../#{DEFAULT_JAR_NAME}")
+  DEFAULT_LOCKFILE = File.expand_path("#{File.dirname(__FILE__)}/../Jarfile.lock")
   
   def self.install_config( opts )
-    opts = { :jar => default_jar, :lockfile => default_lockfile }.merge( opts )
+    opts = { :jar => DEFAULT_JAR, :lockfile => DEFAULT_LOCKFILE }.merge( opts )
     lockfile = opts.delete(:lockfile)
     jar = opts.delete(:jar)
     
@@ -36,7 +26,7 @@ module SolrSail
   end
   
   def self.start( opts )
-    opts = { :jar => default_jar, :lockfile => default_lockfile }.merge( opts )
+    opts = { :jar => DEFAULT_JAR, :lockfile => DEFAULT_LOCKFILE, :join => true }.merge( opts )
     lockfile = opts.delete(:lockfile)
     jar = opts.delete(:jar)
         
@@ -45,7 +35,9 @@ module SolrSail
     
     LockJar.load( lockfile, opts )
     
-    jetty = com.tobedevoured.solrsail.JettyServer.new
-    jetty.start
+    jetty = com.tobedevoured.solrsail.JettyServer.new()
+    jetty.start(opts[:join])
+      
+    jetty
   end
 end

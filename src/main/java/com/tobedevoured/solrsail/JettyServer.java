@@ -28,6 +28,7 @@ public class JettyServer {
 	private String solrHome;
 	private String contextPath; 
 	private int port;
+	private Server server;
 	
 	/**
 	 * Create new instance
@@ -45,14 +46,18 @@ public class JettyServer {
 	 * @throws Exception
 	 */
 	@Command
-    public void start() throws Exception {
+	public void start() throws Exception {
+		start(true);
+	}
+	
+    public void start(boolean join) throws Exception {
 		
     	System.setProperty("java.naming.factory.url.pkgs", "org.eclipse.jetty.jndi");
     	System.setProperty("java.naming.factory.initial", "org.eclipse.jetty.jndi.InitialContextFactory");
     	
     	System.setProperty("org.apache.jasper.compiler.disablejsr199", "true" );
     	
-    	Server server = new Server(getPort());
+    	server = new Server(getPort());
     	
     	String webDir = JettyServer.class.getClassLoader().getResource("webapp").toExternalForm();
 
@@ -70,7 +75,14 @@ public class JettyServer {
         logger.info( "starting Jetty" );
         
         server.start();
-        server.join();
+        
+        if ( join ) {
+        	server.join();
+        }
+    }
+    
+    public void stop() throws Exception {
+    	server.stop();
     }
 	
 	public String getContextPath() {

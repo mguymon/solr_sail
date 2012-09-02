@@ -15,5 +15,10 @@ module SolrSail
     def start
         SolrSail.start( :dest => options[:dest] )   
     end
+    
+    desc "version", "Version"
+    def version
+      puts SolrSail::VERSION
+    end
   end
 end
