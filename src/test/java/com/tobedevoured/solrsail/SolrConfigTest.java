@@ -6,9 +6,9 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Test;
-import org.modeshape.common.util.FileUtil;
 
 import com.tobedevoured.solrsail.SolrConfig;
 
@@ -24,7 +24,7 @@ public class SolrConfigTest {
 		solrHome = new File( helper.getSolrHome() );
 		
 		if ( solrHome.exists() ) {
-			FileUtil.delete( solrHome );
+			FileUtils.forceDelete( solrHome );
 		}
 	}
 	

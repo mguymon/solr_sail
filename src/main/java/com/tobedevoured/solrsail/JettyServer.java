@@ -1,5 +1,6 @@
 package com.tobedevoured.solrsail;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.eclipse.jetty.plus.jndi.EnvEntry;
@@ -27,17 +28,25 @@ public class JettyServer {
 	
 	private String solrHome;
 	private String contextPath; 
-	private int port;
+	private Integer port;
 	private Server server;
 	
 	/**
 	 * Create new instance
 	 */
-	public JettyServer() {
+	public JettyServer( String solrHome ) {
+		this.solrHome = solrHome;
+		
 		Config config = ConfigFactory.load();
-		solrHome = config.getString("solrsail.solr.home");
-		port = config.getInt("solrsail.solr.port");
-		contextPath = config.getString("solrsail.solr.contextpath");
+		
+		File localConfigFile = new File( new StringBuilder( this.solrHome ).append( File.separator ).append( "solr_sail.conf" ).toString() );
+		if ( localConfigFile.exists() ) {
+			Config localConfig = ConfigFactory.parseFile( localConfigFile );
+			config = localConfig.withFallback( config );
+		}
+		
+		port = config.getInt("solr_sail.solr.port");
+		contextPath = config.getString("solr_sail.solr.contextpath");
 	}
 	
 	/**
@@ -47,9 +56,15 @@ public class JettyServer {
 	 */
 	@Command
 	public void start() throws Exception {
-		start(true);
+		start(false);
 	}
 	
+	/**
+	 * Start Jetty
+	 * 
+	 * @param join boolean to join the thread
+	 * @throws Exception
+	 */
     public void start(boolean join) throws Exception {
 		
     	System.setProperty("java.naming.factory.url.pkgs", "org.eclipse.jetty.jndi");
@@ -77,10 +92,16 @@ public class JettyServer {
         server.start();
         
         if ( join ) {
+        	logger.info( "Joining thread" );
         	server.join();
         }
     }
     
+    /**
+     * Stop Jetty
+     * 
+     * @throws Exception
+     */
     public void stop() throws Exception {
     	server.stop();
     }
@@ -96,16 +117,12 @@ public class JettyServer {
 	public String getSolrHome() {
 		return solrHome;
 	}
-
-	public void setSolrHome(String solrHome) {
-		this.solrHome = solrHome;
-	}
 	
-    public int getPort() {
+    public Integer getPort() {
 		return port;
 	}
 
-	public void setPort(int port) {
+	public void setPort(Integer port) {
 		this.port = port;
 	}
 

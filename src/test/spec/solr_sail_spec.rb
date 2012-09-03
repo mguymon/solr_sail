@@ -24,7 +24,7 @@ describe SolrSail do
         FileUtils.rm_rf( 'tmp/solr' )
       end
       
-      SolrSail.install_config( :dest => 'tmp/solr', :lockfile => 'Jarfile.lock', :jar => "target/#{SolrSail::DEFAULT_JAR_NAME}" )
+      SolrSail.install_config( :solr_home => 'tmp/solr', :lockfile => 'Jarfile.lock', :jar => "target/#{SolrSail::DEFAULT_JAR_NAME}" )
       
       File.exists?( 'tmp/solr/solr.xml').should be_true
       File.exists?( 'tmp/solr/conf').should be_true
@@ -32,21 +32,17 @@ describe SolrSail do
   
     context "start" do
       before(:all) do
-        @server = SolrSail.start( :join => false, :dest => 'tmp/solr', :lockfile => 'Jarfile.lock', :jar => "target/#{SolrSail::DEFAULT_JAR_NAME}" )
-        @solr = RSolr.connect( :url => 'http://localhost:8080/solr' )
+        @server = SolrSail.start( :join => false, :solr_home => 'tmp/solr', :lockfile => 'Jarfile.lock', :jar => "target/#{SolrSail::DEFAULT_JAR_NAME}" )
+        @solr = RSolr.connect( :url => "http://localhost:#{@server.getPort()}/#{@server.getContextPath()}" )
       end
 
       after(:all) do
         @server.stop()
       end
       
-      it "should be able to connect" do
-        @solr = RSolr.connect :url => 'http://localhost:8080/solr'
-      end
-      
       it "should be able to add and query a document" do
         @solr.add :id=>1, :price=>1.00
-        
+        @solr.commit
         result  = @solr.get('select', :params => {:q=>'id:1'})
         result["response"]["docs"].should eql [{"id"=>"1", "price"=>1.0, "price_c"=>"1.0,USD"}]
       end
