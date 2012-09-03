@@ -4,12 +4,22 @@ require 'java'
 
 require 'solr_sail/version'
 
+# :title:SolrSail
+#
+# Handles extracting the config and running an instance of Solr
+#
+# = Authors
+# Michael Guymon
+#
 module SolrSail
   
   DEFAULT_JAR_NAME = "solr_sail-#{SolrSail::VERSION}.jar"
   DEFAULT_JAR = File.expand_path("#{File.dirname(__FILE__)}/../#{DEFAULT_JAR_NAME}")
   DEFAULT_LOCKFILE = File.expand_path("#{File.dirname(__FILE__)}/../Jarfile.lock")
   
+  #
+  # Extract the configuration files for Solr
+  #
   # opts:
   #  * :jar: path to the solr_sail jar, default to jar packaged with the gem
   #  * :lockfile: path to lockfile that contains the jar dependencies, defaults to Jarfile.lock packaged with the gem
@@ -30,6 +40,8 @@ module SolrSail
     solr_config.install()
   end
   
+  #
+  # Start Solr
   #
   # The server is configued by solr_sail.conf loaded from the solr home. The
   # opts passed in override solr_sail.conf

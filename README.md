@@ -48,3 +48,22 @@ To change the directory of the Solr home, you can pass _--solr_home_ or _-h_:
   
     solrsail start -h new/path/to/solr
     
+### From Ruby
+
+#### Setup Solr
+
+To create a config directory
+
+    require 'rubygems'
+    require 'solr_sail'
+    
+    SolrSail.install_config()
+
+#### Start up Solr    
+
+    require 'rubygems'
+    require 'solr_sail'
+    
+    SolrSail.start()
+      
+    

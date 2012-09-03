@@ -9,5 +9,6 @@ group :development do
   gem "bundler", "~> 1.1.4"
   gem "jeweler", "~> 1.8.4"
   gem 'jruby-openssl'
+  gem 'yard
 end
 
