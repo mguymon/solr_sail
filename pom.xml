@@ -4,7 +4,7 @@
 
 	<groupId>com.tobedevoured</groupId>
 	<artifactId>solr_sail</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<packaging>jar</packaging>
 
 	<name>Solr Sail</name>
