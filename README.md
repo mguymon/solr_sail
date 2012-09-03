@@ -4,7 +4,7 @@ From zero to search in the flash of a gem.
 
 ## Install
 
-### For Ruby
+### For JRuby
 
     gem install solr_sail
 
@@ -50,7 +50,7 @@ To change the directory of the Solr home, you can pass _--solr_home_ or _-h_:
   
     solrsail start -h new/path/to/solr
     
-### From Ruby
+### For JRuby
 
 #### Setup Solr
 
