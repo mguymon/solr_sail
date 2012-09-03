@@ -86,3 +86,4 @@ scopes:
 repositories: 
   - http://repo1.maven.org/maven2/
   - http://repository.jboss.org/nexus/content/groups/public-jboss
+  - https://oss.sonatype.org/content/groups/public
