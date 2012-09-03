@@ -4,7 +4,7 @@ scopes:
     dependencies: 
       - pom.xml
     resolved_dependencies: 
-      - com.tobedevoured.command:core:jar:0.0.1-SNAPSHOT
+      - com.tobedevoured.command:core:jar:0.0.1
       - org.modeshape:modeshape-common:jar:2.8.2.Final
       - com.metapossum:metapossum-scanner:jar:1.0.1
       - commons-beanutils:commons-beanutils:jar:1.8.3
@@ -36,22 +36,22 @@ scopes:
       - org.eclipse.jetty.orbit:com.sun.el:jar:2.2.0.v201108011116
       - org.eclipse.jetty.orbit:org.eclipse.jdt.core:jar:3.7.1
       - org.eclipse.jdt.core.compiler:ecj:jar:3.7.2
-      - org.apache.solr:solr-core:jar:3.6.0
-      - org.apache.solr:solr-solrj:jar:3.6.0
+      - org.apache.solr:solr-core:jar:3.6.1
+      - org.apache.solr:solr-solrj:jar:3.6.1
       - commons-httpclient:commons-httpclient:jar:3.1
       - org.codehaus.woodstox:wstx-asl:jar:3.2.7
-      - org.apache.lucene:lucene-core:jar:3.6.0
-      - org.apache.lucene:lucene-analyzers:jar:3.6.0
-      - org.apache.lucene:lucene-highlighter:jar:3.6.0
-      - org.apache.lucene:lucene-kuromoji:jar:3.6.0
-      - org.apache.lucene:lucene-memory:jar:3.6.0
-      - org.apache.lucene:lucene-misc:jar:3.6.0
-      - org.apache.lucene:lucene-phonetic:jar:3.6.0
-      - org.apache.lucene:lucene-queries:jar:3.6.0
+      - org.apache.lucene:lucene-core:jar:3.6.1
+      - org.apache.lucene:lucene-analyzers:jar:3.6.1
+      - org.apache.lucene:lucene-highlighter:jar:3.6.1
+      - org.apache.lucene:lucene-kuromoji:jar:3.6.1
+      - org.apache.lucene:lucene-memory:jar:3.6.1
+      - org.apache.lucene:lucene-misc:jar:3.6.1
+      - org.apache.lucene:lucene-phonetic:jar:3.6.1
+      - org.apache.lucene:lucene-queries:jar:3.6.1
       - jakarta-regexp:jakarta-regexp:jar:1.4
-      - org.apache.lucene:lucene-spatial:jar:3.6.0
-      - org.apache.lucene:lucene-spellchecker:jar:3.6.0
-      - org.apache.lucene:lucene-grouping:jar:3.6.0
+      - org.apache.lucene:lucene-spatial:jar:3.6.1
+      - org.apache.lucene:lucene-spellchecker:jar:3.6.1
+      - org.apache.lucene:lucene-grouping:jar:3.6.1
       - commons-codec:commons-codec:jar:1.6
       - commons-fileupload:commons-fileupload:jar:1.2.1
       - org.slf4j:jcl-over-slf4j:jar:1.6.1
@@ -72,6 +72,17 @@ scopes:
     resolved_dependencies: 
       - junit:junit:jar:4.10
       - org.hamcrest:hamcrest-core:jar:1.1
+      - org.apache.solr:solr-solrj:jar:3.6.1
+      - commons-httpclient:commons-httpclient:jar:3.1
+      - commons-io:commons-io:jar:2.1
+      - org.codehaus.woodstox:wstx-asl:jar:3.2.7
+      - org.slf4j:jcl-over-slf4j:jar:1.6.1
+      - org.slf4j:slf4j-api:jar:1.6.1
+      - org.apache.httpcomponents:httpclient:jar:4.2.1
+      - org.apache.httpcomponents:httpcore:jar:4.2.1
+      - commons-logging:commons-logging:jar:1.1.1
+      - commons-codec:commons-codec:jar:1.6
+      - org.apache.httpcomponents:httpmime:jar:4.2.1
 repositories: 
   - http://repo1.maven.org/maven2/
   - http://repository.jboss.org/nexus/content/groups/public-jboss
