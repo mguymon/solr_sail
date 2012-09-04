@@ -16,7 +16,7 @@ From zero to search in the flash of a gem.
       <version>0.0.2</version>
     </dependency>
     
-May have to directly add the Sonatype Repo directly if the sync to Maven Central
+May have to add the Sonatype Repo if the sync to Maven Central
 is slow.
 
     <repositories>
