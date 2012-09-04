@@ -16,6 +16,17 @@ From zero to search in the flash of a gem.
       <version>0.0.2</version>
     </dependency>
     
+May have to directly add the Sonatype Repo directly if the sync to Maven Central
+is slow.
+
+    <repositories>
+      <repository>
+        <id>oss.sonatype.org</id>
+        <name>Sonatype Repository</name>
+        <url>https://oss.sonatype.org/content/groups/public</url>
+      </repository>
+    </repositories>
+    
 ## Usage
 
 ### From the command line
