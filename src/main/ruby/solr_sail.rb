@@ -23,7 +23,6 @@ module SolrSail
   def self.install_jars( opts ={} )
     opts = {:lockfile => DEFAULT_LOCKFILE }.merge( opts )
     lockfile = opts.delete(:lockfile)
-    
     LockJar.install( lockfile, opts )
   end
   

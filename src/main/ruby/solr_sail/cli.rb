@@ -7,7 +7,14 @@ module SolrSail
     desc "install", "Install Solr config"
     method_option :solr_home,  :aliases => "-h", :default => 'solr', :desc => "Path to install solr config"
     def install
+        puts "Installing Solr config"
         SolrSail.install_config( :solr_home => options[:solr_home] )      
+    end
+    
+    desc "install_jars", "Install Solr jar dependencies"
+    def install_jars
+        puts "Installing Jar dependencies"
+        SolrSail.install_jars()      
     end
     
     desc "start", "Run Solr"
