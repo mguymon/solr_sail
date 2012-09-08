@@ -1,0 +1,8 @@
+task :default => :prepare
+
+task :prepare do
+  $:.unshift File.expand_path('../lib', __FILE__)
+  require 'solr_sail'
+  puts "Installing Jar Dependencies"
+  SolrSail.install_jars 
+end

@@ -2,6 +2,8 @@
 
 require 'rubygems'
 require 'bundler'
+require "fileutils"
+
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
@@ -11,7 +13,6 @@ rescue Bundler::BundlerError => e
 end
 
 namespace :solr_sail do
-  require "fileutils"
   task :setup_target_gem do
       unless File.exists?( "target" )
         raise "Run `mvn package` to build java first" 
@@ -47,6 +48,7 @@ namespace :solr_sail do
       FileUtils.copy( 'README.md', "target/gem/README.md" )
       FileUtils.copy( 'pom.xml', "target/gem/pom.xml" )
       FileUtils.copy( 'VERSION', "target/gem/VERSION" )
+      FileUtils.copy( 'PostInstallRakefile', "target/gem/Rakefile" )
       
       version = IO.read('VERSION').strip
       FileUtils.copy( "target/solr_sail-#{version}.jar", "target/gem/solr_sail-#{version}.jar" )
@@ -92,7 +94,8 @@ Jeweler::Tasks.new do |gem|
   gem.authors = ["Michael Guymon"]
   gem.require_paths = %w[lib]
   gem.executable = "solrsail"
-   
+  gem.extensions = ["Rakefile"]
+    
   # all files in target/gem should be included, expect for pkg
   gem.files = Dir.glob("**/*").select{ |path| !(path =~ /^pkg/) }
 end

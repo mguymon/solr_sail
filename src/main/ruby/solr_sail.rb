@@ -18,6 +18,16 @@ module SolrSail
   DEFAULT_LOCKFILE = File.expand_path("#{File.dirname(__FILE__)}/../Jarfile.lock")
   
   #
+  # Install Jar dependencies, should be called by the Gem.post_install
+  #
+  def self.install_jars( opts ={} )
+    opts = {:lockfile => DEFAULT_LOCKFILE }.merge( opts )
+    lockfile = opts.delete(:lockfile)
+    
+    LockJar.install( lockfile, opts )
+  end
+  
+  #
   # Extract the configuration files for Solr
   #
   # opts:
@@ -33,7 +43,6 @@ module SolrSail
     $CLASSPATH << File.expand_path( jar )
     
     # XXX: need a safer way to pass opts to LockJar
-    LockJar.install( lockfile, opts )
     LockJar.load( lockfile, opts )
     
     solr_config = com.tobedevoured.solrsail.SolrConfig.new( opts[:solr_home] )
