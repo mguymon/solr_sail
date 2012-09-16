@@ -19,7 +19,7 @@ module SolrSail
     
     desc "start", "Run Solr"
     method_option :solr_home,  :aliases => "-h", :default => 'solr', :desc => "Path to install solr config"
-    method_option :port, :aliases => "-p", :type => :integer, :desc => "Port to run Solr on, overrides Solr Home config"
+    method_option :port, :aliases => "-p", :type => :numeric, :desc => "Port to run Solr on, overrides Solr Home config"
     def start
         SolrSail.start( :solr_home => options[:solr_home], :port => options[:port] )   
     end
