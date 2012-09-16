@@ -96,7 +96,7 @@ Jeweler::Tasks.new do |gem|
   gem.executable = "solrsail"
   gem.extensions = ["Rakefile"]
     
-  # all files in target/gem should be included, expect for pkg
+  # all files in target/gem should be included, except for pkg
   gem.files = Dir.glob("**/*").select{ |path| !(path =~ /^pkg/) }
 end
 Jeweler::RubygemsDotOrgTasks.new
