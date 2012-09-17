@@ -29,6 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+import com.tobedevoured.command.LogUtil;
 import com.tobedevoured.command.Runner;
 import com.tobedevoured.command.annotation.ByYourCommand;
 import com.tobedevoured.command.annotation.Command;
@@ -89,6 +90,11 @@ public class JettyServer {
     	System.setProperty("java.naming.factory.initial", "org.eclipse.jetty.jndi.InitialContextFactory");
     	
     	System.setProperty("org.apache.jasper.compiler.disablejsr199", "true" );
+    	
+    	File logbackConfig = new File( getSolrHome() + File.separator + "logback.xml" );
+    	if ( logbackConfig.exists() ) {
+    		LogUtil.configureFromFile( logbackConfig );
+    	}
     	
     	server = new Server(getPort());
     	
