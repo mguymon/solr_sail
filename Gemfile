@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "lock_jar", "~> 0.5.2"
+gem "lock_jar", "~> 0.6.0"
 gem "thor",     "> 0.14.0"
 
 group :development do
