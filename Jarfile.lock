@@ -65,50 +65,63 @@ groups:
         - runtime
         - compile
         transitive:
-          commons-beanutils:commons-beanutils:jar:1.8.3:
-            commons-logging:commons-logging:jar:1.1.1: {}
-          com.typesafe:config:jar:0.5.0: {}
-          com.metapossum:metapossum-scanner:jar:1.0.1: {}
-          org.slf4j:slf4j-api:jar:1.6.6: {}
-          org.modeshape:modeshape-common:jar:2.8.2.Final: {}
-          org.eclipse.jetty:jetty-continuation:jar:8.1.4.v20120524: {}
-          org.eclipse.jetty:jetty-http:jar:8.1.4.v20120524:
-            org.eclipse.jetty:jetty-io:jar:8.1.4.v20120524: {}
-          org.eclipse.jetty.orbit:javax.servlet:jar:3.0.0.v201112011016: {}
-          org.eclipse.jetty.orbit:javax.mail.glassfish:jar:1.4.1.v201005082020:
-            org.eclipse.jetty.orbit:javax.activation:jar:1.1.0.v201105071233: {}
-          org.eclipse.jetty:jetty-util:jar:8.1.4.v20120524: {}
-          org.eclipse.jetty:jetty-xml:jar:8.1.4.v20120524: {}
-          org.eclipse.jetty:jetty-servlet:jar:8.1.4.v20120524:
-            org.eclipse.jetty:jetty-security:jar:8.1.4.v20120524: {}
-          org.eclipse.jetty.orbit:javax.transaction:jar:1.1.1.v201105210645: {}
-          org.eclipse.jetty.orbit:javax.el:jar:2.2.0.v201108011116: {}
-          org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:jar:1.2.0.v201105211821: {}
-          org.eclipse.jetty.orbit:org.apache.taglibs.standard.glassfish:jar:1.2.0.v201112081803: {}
-          org.eclipse.jetty.orbit:com.sun.el:jar:2.2.0.v201108011116: {}
-          org.eclipse.jetty.orbit:org.eclipse.jdt.core:jar:3.7.1: {}
-          org.eclipse.jetty.orbit:org.apache.jasper.glassfish:jar:2.2.2.v201112011158: {}
-          org.eclipse.jetty.orbit:javax.servlet.jsp:jar:2.2.0.v201112011158: {}
-          org.apache.lucene:lucene-phonetic:jar:3.6.1: {}
-          org.apache.lucene:lucene-misc:jar:3.6.1: {}
-          org.apache.lucene:lucene-core:jar:3.6.1: {}
-          org.apache.lucene:lucene-grouping:jar:3.6.1: {}
-          org.apache.lucene:lucene-memory:jar:3.6.1: {}
-          org.apache.lucene:lucene-analyzers:jar:3.6.1: {}
-          commons-lang:commons-lang:jar:2.6: {}
-          commons-fileupload:commons-fileupload:jar:1.2.1: {}
-          org.apache.lucene:lucene-spatial:jar:3.6.1: {}
-          org.apache.lucene:lucene-spellchecker:jar:3.6.1: {}
-          org.slf4j:jcl-over-slf4j:jar:1.6.1: {}
-          org.apache.lucene:lucene-queries:jar:3.6.1:
-            jakarta-regexp:jakarta-regexp:jar:1.4: {}
-          com.google.guava:guava:jar:r05: {}
-          commons-io:commons-io:jar:2.1: {}
-          commons-codec:commons-codec:jar:1.6: {}
-          org.apache.lucene:lucene-highlighter:jar:3.6.1: {}
-          org.apache.solr:solr-solrj:jar:3.6.1:
-            org.codehaus.woodstox:wstx-asl:jar:3.2.7: {}
-            commons-httpclient:commons-httpclient:jar:3.1: {}
-          org.apache.lucene:lucene-kuromoji:jar:3.6.1: {}
-          ch.qos.logback:logback-core:jar:1.0.6: {}
+          com.tobedevoured.command:core:jar:0.0.1:
+            commons-beanutils:commons-beanutils:jar:1.8.3:
+              commons-logging:commons-logging:jar:1.1.1: {}
+            com.typesafe:config:jar:0.5.0: {}
+            com.metapossum:metapossum-scanner:jar:1.0.1: {}
+            org.slf4j:slf4j-api:jar:1.6.6: {}
+            org.modeshape:modeshape-common:jar:2.8.2.Final: {}
+          org.eclipse.jetty:jetty-server:jar:8.1.4.v20120524:
+            org.eclipse.jetty:jetty-continuation:jar:8.1.4.v20120524: {}
+            org.eclipse.jetty:jetty-http:jar:8.1.4.v20120524:
+              org.eclipse.jetty:jetty-io:jar:8.1.4.v20120524: {}
+            org.eclipse.jetty.orbit:javax.servlet:jar:3.0.0.v201112011016: {}
+          org.eclipse.jetty:jetty-jndi:jar:8.1.4.v20120524:
+            org.eclipse.jetty.orbit:javax.mail.glassfish:jar:1.4.1.v201005082020:
+              org.eclipse.jetty.orbit:javax.activation:jar:1.1.0.v201105071233: {}
+          org.eclipse.jetty:jetty-jmx:jar:8.1.4.v20120524:
+            org.eclipse.jetty:jetty-util:jar:8.1.4.v20120524: {}
+          org.eclipse.jetty:jetty-webapp:jar:8.1.4.v20120524:
+            org.eclipse.jetty:jetty-xml:jar:8.1.4.v20120524: {}
+            org.eclipse.jetty:jetty-servlet:jar:8.1.4.v20120524:
+              org.eclipse.jetty:jetty-security:jar:8.1.4.v20120524: {}
+          org.eclipse.jetty:jetty-plus:jar:8.1.4.v20120524:
+            org.eclipse.jetty.orbit:javax.transaction:jar:1.1.1.v201105210645: {}
+          org.eclipse.jetty:jetty-jsp:jar:8.1.4.v20120524:
+            org.eclipse.jetty.orbit:javax.el:jar:2.2.0.v201108011116: {}
+            org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:jar:1.2.0.v201105211821: {}
+            org.eclipse.jetty.orbit:org.apache.taglibs.standard.glassfish:jar:1.2.0.v201112081803: {}
+            org.eclipse.jetty.orbit:com.sun.el:jar:2.2.0.v201108011116: {}
+            org.eclipse.jetty.orbit:org.eclipse.jdt.core:jar:3.7.1: {}
+            org.eclipse.jetty.orbit:org.apache.jasper.glassfish:jar:2.2.2.v201112011158: {}
+            org.eclipse.jetty.orbit:javax.servlet.jsp:jar:2.2.0.v201112011158: {}
+          org.eclipse.jdt.core.compiler:ecj:jar:3.7.2: {}
+          org.apache.solr:solr-core:jar:3.6.1:
+            org.apache.lucene:lucene-phonetic:jar:3.6.1: {}
+            org.apache.lucene:lucene-misc:jar:3.6.1: {}
+            org.apache.lucene:lucene-core:jar:3.6.1: {}
+            org.apache.lucene:lucene-grouping:jar:3.6.1: {}
+            org.apache.lucene:lucene-memory:jar:3.6.1: {}
+            org.apache.lucene:lucene-analyzers:jar:3.6.1: {}
+            commons-lang:commons-lang:jar:2.6: {}
+            commons-fileupload:commons-fileupload:jar:1.2.1: {}
+            org.apache.lucene:lucene-spatial:jar:3.6.1: {}
+            org.apache.lucene:lucene-spellchecker:jar:3.6.1: {}
+            org.slf4j:jcl-over-slf4j:jar:1.6.1: {}
+            org.apache.lucene:lucene-queries:jar:3.6.1:
+              jakarta-regexp:jakarta-regexp:jar:1.4: {}
+            com.google.guava:guava:jar:r05: {}
+            commons-io:commons-io:jar:2.1: {}
+            commons-codec:commons-codec:jar:1.6: {}
+            org.apache.lucene:lucene-highlighter:jar:3.6.1: {}
+            org.apache.solr:solr-solrj:jar:3.6.1:
+              org.codehaus.woodstox:wstx-asl:jar:3.2.7: {}
+              commons-httpclient:commons-httpclient:jar:3.1: {}
+            org.apache.lucene:lucene-kuromoji:jar:3.6.1: {}
+          ch.qos.logback:logback-classic:jar:1.0.6:
+            ch.qos.logback:logback-core:jar:1.0.6: {}
+remote_repositories:
+- http://repository.jboss.org/nexus/content/groups/public-jboss
+- https://oss.sonatype.org/content/groups/public
 ...
