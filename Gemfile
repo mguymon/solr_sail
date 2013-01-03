@@ -1,5 +1,3 @@
-require 'lock_jar/bundler'
-
 source "http://rubygems.org"
 
 gem "lock_jar", "~> 0.7.0"
