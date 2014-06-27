@@ -47,28 +47,6 @@ Gem::Specification.new do |s|
   if s.respond_to? :specification_version then
     s.specification_version = 4
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<lock_jar>, [">= 0.7.0"])
-      s.add_development_dependency(%q<rsolr>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<rspec>, ["~> 2.11.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_development_dependency(%q<jruby-openssl>, [">= 0"])
-      s.add_development_dependency(%q<yard>, [">= 0"])
-    else
-      s.add_dependency(%q<lock_jar>, [">= 0.7.0"])
-      s.add_dependency(%q<rsolr>, ["~> 1.0.0"])
-      s.add_dependency(%q<rspec>, ["~> 2.11.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_dependency(%q<jruby-openssl>, [">= 0"])
-      s.add_dependency(%q<yard>, [">= 0"])
-    end
-  else
     s.add_dependency(%q<lock_jar>, [">= 0.7.0"])
-    s.add_dependency(%q<rsolr>, ["~> 1.0.0"])
-    s.add_dependency(%q<rspec>, ["~> 2.11.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-    s.add_dependency(%q<jruby-openssl>, [">= 0"])
-    s.add_dependency(%q<yard>, [">= 0"])
-  end
 end
 
