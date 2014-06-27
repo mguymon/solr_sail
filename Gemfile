@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "lock_jar", "~> 0.7.0"
+gem "lock_jar", ">= 0.7.0"
 
 group :development do
   gem 'rsolr',   "~> 1.0.0"

@@ -12,14 +12,18 @@ GEM
       rdoc
     jruby-openssl (0.7.7)
       bouncy-castle-java (>= 1.5.0146.1)
+    json (1.7.5)
     json (1.7.5-java)
     lock_jar (0.7.0)
       naether (~> 0.10.0)
       thor (~> 0.14.6)
+    naether (0.10.1)
+      rjb (~> 1.4.0)
     naether (0.10.1-java)
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+    rjb (1.4.9)
     rsolr (1.0.8)
       builder (>= 2.1.2)
     rspec (2.11.0)
@@ -35,11 +39,12 @@ GEM
 
 PLATFORMS
   java
+  ruby
 
 DEPENDENCIES
   jeweler (~> 1.8.4)
   jruby-openssl
-  lock_jar (~> 0.7.0)
+  lock_jar (>= 0.7.0)
   rsolr (~> 1.0.0)
   rspec (~> 2.11.0)
   yard
